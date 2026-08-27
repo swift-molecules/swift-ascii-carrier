@@ -3,6 +3,7 @@ public import Carrier
 
 extension Carrier.`Protocol` where Underlying == UInt8 {
 
+    /// Accesses the ASCII constants projected into this carrier type.
     @inlinable
     public static var ascii: ASCII.Namespace<Self>.Type {
         ASCII.Namespace<Self>.self
@@ -11,327 +12,344 @@ extension Carrier.`Protocol` where Underlying == UInt8 {
 
 extension ASCII {
 
+    /// ASCII constants projected into a carrier whose underlying value is a byte.
     @frozen
     public enum Namespace<Owner: Carrier.`Protocol`> where Owner.Underlying == UInt8 {}
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var nul: Owner { Owner(0x00 as UInt8) }
+    public static var nul: Owner { Owner(ASCII.Code.nul.underlying) }
 
-    @inlinable public static var soh: Owner { Owner(0x01 as UInt8) }
+    public static var soh: Owner { Owner(ASCII.Code.soh.underlying) }
 
-    @inlinable public static var stx: Owner { Owner(0x02 as UInt8) }
+    public static var stx: Owner { Owner(ASCII.Code.stx.underlying) }
 
-    @inlinable public static var etx: Owner { Owner(0x03 as UInt8) }
+    public static var etx: Owner { Owner(ASCII.Code.etx.underlying) }
 
-    @inlinable public static var eot: Owner { Owner(0x04 as UInt8) }
+    public static var eot: Owner { Owner(ASCII.Code.eot.underlying) }
 
-    @inlinable public static var enq: Owner { Owner(0x05 as UInt8) }
+    public static var enq: Owner { Owner(ASCII.Code.enq.underlying) }
 
-    @inlinable public static var ack: Owner { Owner(0x06 as UInt8) }
+    public static var ack: Owner { Owner(ASCII.Code.ack.underlying) }
 
-    @inlinable public static var bel: Owner { Owner(0x07 as UInt8) }
+    public static var bel: Owner { Owner(ASCII.Code.bel.underlying) }
 
-    @inlinable public static var bs: Owner { Owner(0x08 as UInt8) }
+    public static var bs: Owner { Owner(ASCII.Code.bs.underlying) }
 
-    @inlinable public static var htab: Owner { Owner(0x09 as UInt8) }
+    public static var htab: Owner { Owner(ASCII.Code.htab.underlying) }
 
-    @inlinable public static var tab: Owner { Owner(0x09 as UInt8) }
+    public static var tab: Owner { Owner(ASCII.Code.tab.underlying) }
 
-    @inlinable public static var lf: Owner { Owner(0x0A as UInt8) }
+    public static var lf: Owner { Owner(ASCII.Code.lf.underlying) }
 
-    @inlinable public static var newline: Owner { Owner(0x0A as UInt8) }
+    public static var newline: Owner { Owner(ASCII.Code.newline.underlying) }
 
-    @inlinable public static var vtab: Owner { Owner(0x0B as UInt8) }
+    public static var vtab: Owner { Owner(ASCII.Code.vtab.underlying) }
 
-    @inlinable public static var ff: Owner { Owner(0x0C as UInt8) }
+    public static var ff: Owner { Owner(ASCII.Code.ff.underlying) }
 
-    @inlinable public static var cr: Owner { Owner(0x0D as UInt8) }
+    public static var cr: Owner { Owner(ASCII.Code.cr.underlying) }
 
-    @inlinable public static var so: Owner { Owner(0x0E as UInt8) }
+    public static var so: Owner { Owner(ASCII.Code.so.underlying) }
 
-    @inlinable public static var si: Owner { Owner(0x0F as UInt8) }
+    public static var si: Owner { Owner(ASCII.Code.si.underlying) }
 
-    @inlinable public static var dle: Owner { Owner(0x10 as UInt8) }
+    public static var dle: Owner { Owner(ASCII.Code.dle.underlying) }
 
-    @inlinable public static var dc1: Owner { Owner(0x11 as UInt8) }
+    public static var dc1: Owner { Owner(ASCII.Code.dc1.underlying) }
 
-    @inlinable public static var dc2: Owner { Owner(0x12 as UInt8) }
+    public static var dc2: Owner { Owner(ASCII.Code.dc2.underlying) }
 
-    @inlinable public static var dc3: Owner { Owner(0x13 as UInt8) }
+    public static var dc3: Owner { Owner(ASCII.Code.dc3.underlying) }
 
-    @inlinable public static var dc4: Owner { Owner(0x14 as UInt8) }
+    public static var dc4: Owner { Owner(ASCII.Code.dc4.underlying) }
 
-    @inlinable public static var nak: Owner { Owner(0x15 as UInt8) }
+    public static var nak: Owner { Owner(ASCII.Code.nak.underlying) }
 
-    @inlinable public static var syn: Owner { Owner(0x16 as UInt8) }
+    public static var syn: Owner { Owner(ASCII.Code.syn.underlying) }
 
-    @inlinable public static var etb: Owner { Owner(0x17 as UInt8) }
+    public static var etb: Owner { Owner(ASCII.Code.etb.underlying) }
 
-    @inlinable public static var can: Owner { Owner(0x18 as UInt8) }
+    public static var can: Owner { Owner(ASCII.Code.can.underlying) }
 
-    @inlinable public static var em: Owner { Owner(0x19 as UInt8) }
+    public static var em: Owner { Owner(ASCII.Code.em.underlying) }
 
-    @inlinable public static var sub: Owner { Owner(0x1A as UInt8) }
+    public static var sub: Owner { Owner(ASCII.Code.sub.underlying) }
 
-    @inlinable public static var esc: Owner { Owner(0x1B as UInt8) }
+    public static var esc: Owner { Owner(ASCII.Code.esc.underlying) }
 
-    @inlinable public static var fs: Owner { Owner(0x1C as UInt8) }
+    public static var fs: Owner { Owner(ASCII.Code.fs.underlying) }
 
-    @inlinable public static var gs: Owner { Owner(0x1D as UInt8) }
+    public static var gs: Owner { Owner(ASCII.Code.gs.underlying) }
 
-    @inlinable public static var rs: Owner { Owner(0x1E as UInt8) }
+    public static var rs: Owner { Owner(ASCII.Code.rs.underlying) }
 
-    @inlinable public static var us: Owner { Owner(0x1F as UInt8) }
+    public static var us: Owner { Owner(ASCII.Code.us.underlying) }
 
-    @inlinable public static var del: Owner { Owner(0x7F as UInt8) }
+    public static var del: Owner { Owner(ASCII.Code.del.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var sp: Owner { Owner(0x20 as UInt8) }
+    public static var sp: Owner { Owner(ASCII.Code.sp.underlying) }
 
-    @inlinable public static var space: Owner { Owner(0x20 as UInt8) }
+    public static var space: Owner { Owner(ASCII.Code.space.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var exclamationPoint: Owner { Owner(0x21 as UInt8) }
+    public static var exclamationPoint: Owner { Owner(ASCII.Code.exclamationPoint.underlying) }
 
-    @inlinable public static var quotationMark: Owner { Owner(0x22 as UInt8) }
+    public static var exclamationMark: Owner { Owner(ASCII.Code.exclamationMark.underlying) }
 
-    @inlinable public static var dquote: Owner { Owner(0x22 as UInt8) }
+    public static var quotationMark: Owner { Owner(ASCII.Code.quotationMark.underlying) }
 
-    @inlinable public static var doubleQuote: Owner { Owner(0x22 as UInt8) }
+    public static var dquote: Owner { Owner(ASCII.Code.dquote.underlying) }
 
-    @inlinable public static var numberSign: Owner { Owner(0x23 as UInt8) }
+    public static var doubleQuote: Owner { Owner(ASCII.Code.doubleQuote.underlying) }
 
-    @inlinable public static var dollarSign: Owner { Owner(0x24 as UInt8) }
+    public static var numberSign: Owner { Owner(ASCII.Code.numberSign.underlying) }
 
-    @inlinable public static var percentSign: Owner { Owner(0x25 as UInt8) }
+    public static var dollarSign: Owner { Owner(ASCII.Code.dollarSign.underlying) }
 
-    @inlinable public static var ampersand: Owner { Owner(0x26 as UInt8) }
+    public static var percentSign: Owner { Owner(ASCII.Code.percentSign.underlying) }
 
-    @inlinable public static var apostrophe: Owner { Owner(0x27 as UInt8) }
+    public static var ampersand: Owner { Owner(ASCII.Code.ampersand.underlying) }
 
-    @inlinable public static var leftParenthesis: Owner { Owner(0x28 as UInt8) }
+    public static var apostrophe: Owner { Owner(ASCII.Code.apostrophe.underlying) }
 
-    @inlinable public static var rightParenthesis: Owner { Owner(0x29 as UInt8) }
+    public static var leftParenthesis: Owner { Owner(ASCII.Code.leftParenthesis.underlying) }
 
-    @inlinable public static var asterisk: Owner { Owner(0x2A as UInt8) }
+    public static var rightParenthesis: Owner { Owner(ASCII.Code.rightParenthesis.underlying) }
 
-    @inlinable public static var plusSign: Owner { Owner(0x2B as UInt8) }
+    public static var asterisk: Owner { Owner(ASCII.Code.asterisk.underlying) }
 
-    @inlinable public static var plus: Owner { Owner(0x2B as UInt8) }
+    public static var plusSign: Owner { Owner(ASCII.Code.plusSign.underlying) }
 
-    @inlinable public static var comma: Owner { Owner(0x2C as UInt8) }
+    public static var plus: Owner { Owner(ASCII.Code.plus.underlying) }
 
-    @inlinable public static var hyphen: Owner { Owner(0x2D as UInt8) }
+    public static var comma: Owner { Owner(ASCII.Code.comma.underlying) }
 
-    @inlinable public static var period: Owner { Owner(0x2E as UInt8) }
+    public static var hyphen: Owner { Owner(ASCII.Code.hyphen.underlying) }
 
-    @inlinable public static var slant: Owner { Owner(0x2F as UInt8) }
+    public static var period: Owner { Owner(ASCII.Code.period.underlying) }
 
-    @inlinable public static var solidus: Owner { Owner(0x2F as UInt8) }
+    public static var slant: Owner { Owner(ASCII.Code.slant.underlying) }
 
-    @inlinable public static var slash: Owner { Owner(0x2F as UInt8) }
+    public static var solidus: Owner { Owner(ASCII.Code.solidus.underlying) }
 
-    @inlinable public static var forwardSlash: Owner { Owner(0x2F as UInt8) }
+    public static var slash: Owner { Owner(ASCII.Code.slash.underlying) }
+
+    public static var forwardSlash: Owner { Owner(ASCII.Code.forwardSlash.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var `0`: Owner { Owner(0x30 as UInt8) }
+    public static var `0`: Owner { Owner(ASCII.Code.`0`.underlying) }
 
-    @inlinable public static var `1`: Owner { Owner(0x31 as UInt8) }
+    public static var `1`: Owner { Owner(ASCII.Code.`1`.underlying) }
 
-    @inlinable public static var `2`: Owner { Owner(0x32 as UInt8) }
+    public static var `2`: Owner { Owner(ASCII.Code.`2`.underlying) }
 
-    @inlinable public static var `3`: Owner { Owner(0x33 as UInt8) }
+    public static var `3`: Owner { Owner(ASCII.Code.`3`.underlying) }
 
-    @inlinable public static var `4`: Owner { Owner(0x34 as UInt8) }
+    public static var `4`: Owner { Owner(ASCII.Code.`4`.underlying) }
 
-    @inlinable public static var `5`: Owner { Owner(0x35 as UInt8) }
+    public static var `5`: Owner { Owner(ASCII.Code.`5`.underlying) }
 
-    @inlinable public static var `6`: Owner { Owner(0x36 as UInt8) }
+    public static var `6`: Owner { Owner(ASCII.Code.`6`.underlying) }
 
-    @inlinable public static var `7`: Owner { Owner(0x37 as UInt8) }
+    public static var `7`: Owner { Owner(ASCII.Code.`7`.underlying) }
 
-    @inlinable public static var `8`: Owner { Owner(0x38 as UInt8) }
+    public static var `8`: Owner { Owner(ASCII.Code.`8`.underlying) }
 
-    @inlinable public static var `9`: Owner { Owner(0x39 as UInt8) }
+    public static var `9`: Owner { Owner(ASCII.Code.`9`.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var colon: Owner { Owner(0x3A as UInt8) }
+    public static var colon: Owner { Owner(ASCII.Code.colon.underlying) }
 
-    @inlinable public static var semicolon: Owner { Owner(0x3B as UInt8) }
+    public static var semicolon: Owner { Owner(ASCII.Code.semicolon.underlying) }
 
-    @inlinable public static var lessThanSign: Owner { Owner(0x3C as UInt8) }
+    public static var lessThanSign: Owner { Owner(ASCII.Code.lessThanSign.underlying) }
 
-    @inlinable public static var lt: Owner { Owner(0x3C as UInt8) }
+    public static var lt: Owner { Owner(ASCII.Code.lt.underlying) }
 
-    @inlinable public static var lessThan: Owner { Owner(0x3C as UInt8) }
+    public static var lessThan: Owner { Owner(ASCII.Code.lessThan.underlying) }
 
-    @inlinable public static var equalsSign: Owner { Owner(0x3D as UInt8) }
+    public static var equalsSign: Owner { Owner(ASCII.Code.equalsSign.underlying) }
 
-    @inlinable public static var greaterThanSign: Owner { Owner(0x3E as UInt8) }
+    public static var greaterThanSign: Owner { Owner(ASCII.Code.greaterThanSign.underlying) }
 
-    @inlinable public static var gt: Owner { Owner(0x3E as UInt8) }
+    public static var gt: Owner { Owner(ASCII.Code.gt.underlying) }
 
-    @inlinable public static var greaterThan: Owner { Owner(0x3E as UInt8) }
+    public static var greaterThan: Owner { Owner(ASCII.Code.greaterThan.underlying) }
 
-    @inlinable public static var questionMark: Owner { Owner(0x3F as UInt8) }
+    public static var questionMark: Owner { Owner(ASCII.Code.questionMark.underlying) }
 
-    @inlinable public static var commercialAt: Owner { Owner(0x40 as UInt8) }
+    public static var commercialAt: Owner { Owner(ASCII.Code.commercialAt.underlying) }
 
-    @inlinable public static var at: Owner { Owner(0x40 as UInt8) }
+    public static var at: Owner { Owner(ASCII.Code.at.underlying) }
 
-    @inlinable public static var atSign: Owner { Owner(0x40 as UInt8) }
+    public static var atSign: Owner { Owner(ASCII.Code.atSign.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var A: Owner { Owner(0x41 as UInt8) }
+    public static var A: Owner { Owner(ASCII.Code.A.underlying) }
 
-    @inlinable public static var B: Owner { Owner(0x42 as UInt8) }
+    public static var B: Owner { Owner(ASCII.Code.B.underlying) }
 
-    @inlinable public static var C: Owner { Owner(0x43 as UInt8) }
+    public static var C: Owner { Owner(ASCII.Code.C.underlying) }
 
-    @inlinable public static var D: Owner { Owner(0x44 as UInt8) }
+    public static var D: Owner { Owner(ASCII.Code.D.underlying) }
 
-    @inlinable public static var E: Owner { Owner(0x45 as UInt8) }
+    public static var E: Owner { Owner(ASCII.Code.E.underlying) }
 
-    @inlinable public static var F: Owner { Owner(0x46 as UInt8) }
+    public static var F: Owner { Owner(ASCII.Code.F.underlying) }
 
-    @inlinable public static var G: Owner { Owner(0x47 as UInt8) }
+    public static var G: Owner { Owner(ASCII.Code.G.underlying) }
 
-    @inlinable public static var H: Owner { Owner(0x48 as UInt8) }
+    public static var H: Owner { Owner(ASCII.Code.H.underlying) }
 
-    @inlinable public static var I: Owner { Owner(0x49 as UInt8) }
+    public static var I: Owner { Owner(ASCII.Code.I.underlying) }
 
-    @inlinable public static var J: Owner { Owner(0x4A as UInt8) }
+    public static var J: Owner { Owner(ASCII.Code.J.underlying) }
 
-    @inlinable public static var K: Owner { Owner(0x4B as UInt8) }
+    public static var K: Owner { Owner(ASCII.Code.K.underlying) }
 
-    @inlinable public static var L: Owner { Owner(0x4C as UInt8) }
+    public static var L: Owner { Owner(ASCII.Code.L.underlying) }
 
-    @inlinable public static var M: Owner { Owner(0x4D as UInt8) }
+    public static var M: Owner { Owner(ASCII.Code.M.underlying) }
 
-    @inlinable public static var N: Owner { Owner(0x4E as UInt8) }
+    public static var N: Owner { Owner(ASCII.Code.N.underlying) }
 
-    @inlinable public static var O: Owner { Owner(0x4F as UInt8) }
+    public static var O: Owner { Owner(ASCII.Code.O.underlying) }
 
-    @inlinable public static var P: Owner { Owner(0x50 as UInt8) }
+    public static var P: Owner { Owner(ASCII.Code.P.underlying) }
 
-    @inlinable public static var Q: Owner { Owner(0x51 as UInt8) }
+    public static var Q: Owner { Owner(ASCII.Code.Q.underlying) }
 
-    @inlinable public static var R: Owner { Owner(0x52 as UInt8) }
+    public static var R: Owner { Owner(ASCII.Code.R.underlying) }
 
-    @inlinable public static var S: Owner { Owner(0x53 as UInt8) }
+    public static var S: Owner { Owner(ASCII.Code.S.underlying) }
 
-    @inlinable public static var T: Owner { Owner(0x54 as UInt8) }
+    public static var T: Owner { Owner(ASCII.Code.T.underlying) }
 
-    @inlinable public static var U: Owner { Owner(0x55 as UInt8) }
+    public static var U: Owner { Owner(ASCII.Code.U.underlying) }
 
-    @inlinable public static var V: Owner { Owner(0x56 as UInt8) }
+    public static var V: Owner { Owner(ASCII.Code.V.underlying) }
 
-    @inlinable public static var W: Owner { Owner(0x57 as UInt8) }
+    public static var W: Owner { Owner(ASCII.Code.W.underlying) }
 
-    @inlinable public static var X: Owner { Owner(0x58 as UInt8) }
+    public static var X: Owner { Owner(ASCII.Code.X.underlying) }
 
-    @inlinable public static var Y: Owner { Owner(0x59 as UInt8) }
+    public static var Y: Owner { Owner(ASCII.Code.Y.underlying) }
 
-    @inlinable public static var Z: Owner { Owner(0x5A as UInt8) }
+    public static var Z: Owner { Owner(ASCII.Code.Z.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var leftBracket: Owner { Owner(0x5B as UInt8) }
+    public static var leftBracket: Owner { Owner(ASCII.Code.leftBracket.underlying) }
 
-    @inlinable public static var leftSquareBracket: Owner { Owner(0x5B as UInt8) }
+    public static var leftSquareBracket: Owner { Owner(ASCII.Code.leftSquareBracket.underlying) }
 
-    @inlinable public static var reverseSlant: Owner { Owner(0x5C as UInt8) }
+    public static var reverseSlant: Owner { Owner(ASCII.Code.reverseSlant.underlying) }
 
-    @inlinable public static var reverseSolidus: Owner { Owner(0x5C as UInt8) }
+    public static var reverseSolidus: Owner { Owner(ASCII.Code.reverseSolidus.underlying) }
 
-    @inlinable public static var backslash: Owner { Owner(0x5C as UInt8) }
+    public static var backslash: Owner { Owner(ASCII.Code.backslash.underlying) }
 
-    @inlinable public static var rightBracket: Owner { Owner(0x5D as UInt8) }
+    public static var rightBracket: Owner { Owner(ASCII.Code.rightBracket.underlying) }
 
-    @inlinable public static var rightSquareBracket: Owner { Owner(0x5D as UInt8) }
+    public static var rightSquareBracket: Owner { Owner(ASCII.Code.rightSquareBracket.underlying) }
 
-    @inlinable public static var circumflexAccent: Owner { Owner(0x5E as UInt8) }
+    public static var circumflexAccent: Owner { Owner(ASCII.Code.circumflexAccent.underlying) }
 
-    @inlinable public static var underline: Owner { Owner(0x5F as UInt8) }
+    public static var circumflex: Owner { Owner(ASCII.Code.circumflex.underlying) }
 
-    @inlinable public static var leftSingleQuotationMark: Owner { Owner(0x60 as UInt8) }
+    public static var underline: Owner { Owner(ASCII.Code.underline.underlying) }
+
+    public static var underscore: Owner { Owner(ASCII.Code.underscore.underlying) }
+
+    public static var lowLine: Owner { Owner(ASCII.Code.lowLine.underlying) }
+
+    public static var leftSingleQuotationMark: Owner { Owner(ASCII.Code.leftSingleQuotationMark.underlying) }
+
+    public static var graveAccent: Owner { Owner(ASCII.Code.graveAccent.underlying) }
+
+    public static var backtick: Owner { Owner(ASCII.Code.backtick.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var a: Owner { Owner(0x61 as UInt8) }
+    public static var a: Owner { Owner(ASCII.Code.a.underlying) }
 
-    @inlinable public static var b: Owner { Owner(0x62 as UInt8) }
+    public static var b: Owner { Owner(ASCII.Code.b.underlying) }
 
-    @inlinable public static var c: Owner { Owner(0x63 as UInt8) }
+    public static var c: Owner { Owner(ASCII.Code.c.underlying) }
 
-    @inlinable public static var d: Owner { Owner(0x64 as UInt8) }
+    public static var d: Owner { Owner(ASCII.Code.d.underlying) }
 
-    @inlinable public static var e: Owner { Owner(0x65 as UInt8) }
+    public static var e: Owner { Owner(ASCII.Code.e.underlying) }
 
-    @inlinable public static var f: Owner { Owner(0x66 as UInt8) }
+    public static var f: Owner { Owner(ASCII.Code.f.underlying) }
 
-    @inlinable public static var g: Owner { Owner(0x67 as UInt8) }
+    public static var g: Owner { Owner(ASCII.Code.g.underlying) }
 
-    @inlinable public static var h: Owner { Owner(0x68 as UInt8) }
+    public static var h: Owner { Owner(ASCII.Code.h.underlying) }
 
-    @inlinable public static var i: Owner { Owner(0x69 as UInt8) }
+    public static var i: Owner { Owner(ASCII.Code.i.underlying) }
 
-    @inlinable public static var j: Owner { Owner(0x6A as UInt8) }
+    public static var j: Owner { Owner(ASCII.Code.j.underlying) }
 
-    @inlinable public static var k: Owner { Owner(0x6B as UInt8) }
+    public static var k: Owner { Owner(ASCII.Code.k.underlying) }
 
-    @inlinable public static var l: Owner { Owner(0x6C as UInt8) }
+    public static var l: Owner { Owner(ASCII.Code.l.underlying) }
 
-    @inlinable public static var m: Owner { Owner(0x6D as UInt8) }
+    public static var m: Owner { Owner(ASCII.Code.m.underlying) }
 
-    @inlinable public static var n: Owner { Owner(0x6E as UInt8) }
+    public static var n: Owner { Owner(ASCII.Code.n.underlying) }
 
-    @inlinable public static var o: Owner { Owner(0x6F as UInt8) }
+    public static var o: Owner { Owner(ASCII.Code.o.underlying) }
 
-    @inlinable public static var p: Owner { Owner(0x70 as UInt8) }
+    public static var p: Owner { Owner(ASCII.Code.p.underlying) }
 
-    @inlinable public static var q: Owner { Owner(0x71 as UInt8) }
+    public static var q: Owner { Owner(ASCII.Code.q.underlying) }
 
-    @inlinable public static var r: Owner { Owner(0x72 as UInt8) }
+    public static var r: Owner { Owner(ASCII.Code.r.underlying) }
 
-    @inlinable public static var s: Owner { Owner(0x73 as UInt8) }
+    public static var s: Owner { Owner(ASCII.Code.s.underlying) }
 
-    @inlinable public static var t: Owner { Owner(0x74 as UInt8) }
+    public static var t: Owner { Owner(ASCII.Code.t.underlying) }
 
-    @inlinable public static var u: Owner { Owner(0x75 as UInt8) }
+    public static var u: Owner { Owner(ASCII.Code.u.underlying) }
 
-    @inlinable public static var v: Owner { Owner(0x76 as UInt8) }
+    public static var v: Owner { Owner(ASCII.Code.v.underlying) }
 
-    @inlinable public static var w: Owner { Owner(0x77 as UInt8) }
+    public static var w: Owner { Owner(ASCII.Code.w.underlying) }
 
-    @inlinable public static var x: Owner { Owner(0x78 as UInt8) }
+    public static var x: Owner { Owner(ASCII.Code.x.underlying) }
 
-    @inlinable public static var y: Owner { Owner(0x79 as UInt8) }
+    public static var y: Owner { Owner(ASCII.Code.y.underlying) }
 
-    @inlinable public static var z: Owner { Owner(0x7A as UInt8) }
+    public static var z: Owner { Owner(ASCII.Code.z.underlying) }
 }
 
 extension ASCII.Namespace {
 
-    @inlinable public static var leftBrace: Owner { Owner(0x7B as UInt8) }
+    public static var leftBrace: Owner { Owner(ASCII.Code.leftBrace.underlying) }
 
-    @inlinable public static var verticalLine: Owner { Owner(0x7C as UInt8) }
+    public static var leftCurlyBracket: Owner { Owner(ASCII.Code.leftCurlyBracket.underlying) }
 
-    @inlinable public static var rightBrace: Owner { Owner(0x7D as UInt8) }
+    public static var verticalLine: Owner { Owner(ASCII.Code.verticalLine.underlying) }
 
-    @inlinable public static var tilde: Owner { Owner(0x7E as UInt8) }
+    public static var rightBrace: Owner { Owner(ASCII.Code.rightBrace.underlying) }
+
+    public static var rightCurlyBracket: Owner { Owner(ASCII.Code.rightCurlyBracket.underlying) }
+
+    public static var tilde: Owner { Owner(ASCII.Code.tilde.underlying) }
 }
